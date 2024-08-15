@@ -58,7 +58,7 @@ const Nav = () => {
             <div className='border-y py-2'>
                 <div className="navbar all-container mx-auto">
                     <div className="navbar-start">
-                        <h2 className="text-2xl md:text-3xl font-semibold flex items-center gap-2"><img src="/fav.png" alt="" /> Echo Shop</h2>
+                        <img className='w-[120px]' src="./logo.png" alt="" />
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <label className="input input-bordered flex items-center gap-2">
