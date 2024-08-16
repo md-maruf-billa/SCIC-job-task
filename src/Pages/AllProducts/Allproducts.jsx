@@ -23,11 +23,12 @@ const AllProducts = () => {
     const [categoryValue, setCategoryValue] = useState('');
     const [priceValue, setPriceValue] = useState('');
     const [sortPrice,setSortPrice] = useState('');
+    const [sortDate,setSortDate] = useState('');
 
     const { data = [], isLoading, refetch } = useQuery({
         queryKey: ["FilteredData", searchValue],
         queryFn: async () => {
-            const result = await axiosGlobal(`products?search=${searchValue}&brand=${brandValue}&category=${categoryValue}&price=${priceValue}&sortPrice=${sortPrice}`);
+            const result = await axiosGlobal(`products?search=${searchValue}&brand=${brandValue}&category=${categoryValue}&price=${priceValue}&sortPrice=${sortPrice}&sortDate=${sortDate}`);
             return result.data;
         }
     });
@@ -36,7 +37,7 @@ const AllProducts = () => {
 
         refetch();
 
-    }, [searchValue,brandValue,categoryValue,priceValue, refetch]);
+    }, [searchValue,brandValue,categoryValue,priceValue,sortPrice,sortDate, refetch]);
 
 
     return (
@@ -89,10 +90,10 @@ const AllProducts = () => {
                         <option>Low to High</option>
                         <option>High to Low</option>
                     </select>
-                    <select className="select select-bordered w-fit">
+                    <select onChange={e=>setSortDate(e.target.value)} className="select select-bordered w-fit">
                         <option disabled selected>Sort by Time</option>
-                        <option>Han Solo</option>
-                        <option>Greedo</option>
+                        <option>Newest</option>
+                        <option>Older</option>
                     </select>
                 </div>
             </div>
