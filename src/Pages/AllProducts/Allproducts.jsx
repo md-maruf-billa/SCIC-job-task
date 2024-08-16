@@ -14,30 +14,44 @@ import { SlHandbag } from 'react-icons/sl';
 import { FaRegHeart } from 'react-icons/fa';
 import { LuEye } from 'react-icons/lu';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import useAllDataLength from '../../Hooks/useAllDataLength/useAllDataLength';
 
 const AllProducts = () => {
+    const productLen = useAllDataLength();
     const axiosGlobal = useAxios();
     const [isHoverId, setIsHoverId] = useState(null);
     const [searchValue, setSearchValue] = useState('');
-    const [brandValue, setBrandValue ] = useState('');
+    const [brandValue, setBrandValue] = useState('');
     const [categoryValue, setCategoryValue] = useState('');
     const [priceValue, setPriceValue] = useState('');
-    const [sortPrice,setSortPrice] = useState('');
-    const [sortDate,setSortDate] = useState('');
+    const [sortPrice, setSortPrice] = useState('');
+    const [sortDate, setSortDate] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
+    const dataPerPage = 10;
 
-    const { data = [], isLoading, refetch } = useQuery({
+
+    const { data =[], isLoading, refetch } = useQuery({
         queryKey: ["FilteredData", searchValue],
         queryFn: async () => {
-            const result = await axiosGlobal(`products?search=${searchValue}&brand=${brandValue}&category=${categoryValue}&price=${priceValue}&sortPrice=${sortPrice}&sortDate=${sortDate}`);
+            const result = await axiosGlobal(`products?search=${searchValue}&brand=${brandValue}&category=${categoryValue}&price=${priceValue}&sortPrice=${sortPrice}&sortDate=${sortDate}&page=${currentPage - 1}&size=${dataPerPage}`);
             return result.data;
         }
     });
+    // implement Pagination
+    const totalPage = Math.ceil(productLen / dataPerPage);
+    const pages = [];
+    for (let i = 1; i < totalPage + 1; i++) {
+        pages.push(i);
+
+    }
+
+
 
     useEffect(() => {
 
         refetch();
 
-    }, [searchValue,brandValue,categoryValue,priceValue,sortPrice,sortDate, refetch]);
+    }, [searchValue, brandValue, categoryValue, priceValue, sortPrice, sortDate, currentPage, refetch]);
 
 
     return (
@@ -55,19 +69,19 @@ const AllProducts = () => {
             {/* Features header */}
             <div className='flex flex-col lg:flex-row justify-between gap-5 lg:gap-0 mt-10'>
                 <div className='flex items-center gap-4 flex-wrap'>
-                    <select onChange={e=>setBrandValue(e.target.value)} className="select select-bordered w-fit">
+                    <select onChange={e => setBrandValue(e.target.value)} className="select select-bordered w-fit">
                         <option disabled selected>Filter Brand</option>
                         <option>Nature Best</option>
                         <option>Organic Orchard</option>
                         <option>Healthy Harvest</option>
                         <option>Green Valley</option>
                     </select>
-                    <select onChange={e=>setCategoryValue(e.target.value)} className="select select-bordered w-fit">
+                    <select onChange={e => setCategoryValue(e.target.value)} className="select select-bordered w-fit">
                         <option disabled selected>Filter Category</option>
                         <option>Fresh Vegetables</option>
                         <option>Fresh Fruit</option>
                     </select>
-                    <select onChange={e=>setPriceValue(e.target.value)} className="select select-bordered w-fit">
+                    <select onChange={e => setPriceValue(e.target.value)} className="select select-bordered w-fit">
                         <option disabled selected>Filter Price Under</option>
                         <option>10</option>
                         <option>20</option>
@@ -85,12 +99,12 @@ const AllProducts = () => {
                             <path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" />
                         </svg>
                     </label>
-                    <select onChange={e=>setSortPrice(e.target.value)} className="select select-bordered w-fit">
+                    <select onChange={e => setSortPrice(e.target.value)} className="select select-bordered w-fit">
                         <option disabled selected>Sort by Price</option>
                         <option>Low to High</option>
                         <option>High to Low</option>
                     </select>
-                    <select onChange={e=>setSortDate(e.target.value)} className="select select-bordered w-fit">
+                    <select onChange={e => setSortDate(e.target.value)} className="select select-bordered w-fit">
                         <option disabled selected>Sort by Time</option>
                         <option>Newest</option>
                         <option>Older</option>
@@ -98,7 +112,7 @@ const AllProducts = () => {
                 </div>
             </div>
 
-            <h3 className='mt-10 mb-4 text-right'>Total Product Found: <span className='text-[#2C742F] font-bold'>{data?.length}</span></h3>
+            <h3 className='mt-10 mb-4 text-right'>Total Products Found: <span className='text-[#2C742F] font-bold'>{data.length}</span></h3>
             {
                 isLoading ? <ItemLoader />
                     :
@@ -143,17 +157,29 @@ const AllProducts = () => {
 
             {/* Pagination */}
             <div className='flex justify-center items-center gap-3 mt-10'>
-                <button className='btn'><FaArrowLeft /> Prev</button>
+                <button disabled={currentPage == 1} onClick={() => setCurrentPage(currentPage - 1)} className='btn'><FaArrowLeft /> Prev</button>
                 <div className="join">
-                    <button className="join-item btn">1</button>
-                    <button className="join-item btn btn-active">2</button>
-                    <button className="join-item btn">3</button>
-                    <button className="join-item btn">4</button>
+                    {
+                        pages.map(page =>
+
+                            <input
+                                key={page}
+                                onChange={(e) => { setCurrentPage(parseInt(e.target.value)) }}
+                                className="join-item btn btn-square"
+                                type="radio"
+                                name="options"
+                                value={page}
+                                aria-label={page}
+                                checked={currentPage == page} />
+
+                        )
+                    }
                 </div>
-                <button className='btn'>Next <FaArrowRight /></button>
+
+                <button disabled={totalPage == currentPage} onClick={() => setCurrentPage(currentPage + 1)} className='btn'>Next <FaArrowRight /></button>
             </div>
 
-        </div>
+        </div >
     );
 };
 
