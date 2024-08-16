@@ -22,11 +22,12 @@ const AllProducts = () => {
     const [brandValue, setBrandValue ] = useState('');
     const [categoryValue, setCategoryValue] = useState('');
     const [priceValue, setPriceValue] = useState('');
+    const [sortPrice,setSortPrice] = useState('');
 
     const { data = [], isLoading, refetch } = useQuery({
         queryKey: ["FilteredData", searchValue],
         queryFn: async () => {
-            const result = await axiosGlobal(`products?search=${searchValue}&brand=${brandValue}`);
+            const result = await axiosGlobal(`products?search=${searchValue}&brand=${brandValue}&category=${categoryValue}&price=${priceValue}&sortPrice=${sortPrice}`);
             return result.data;
         }
     });
@@ -35,7 +36,7 @@ const AllProducts = () => {
 
         refetch();
 
-    }, [searchValue,brandValue, refetch]);
+    }, [searchValue,brandValue,categoryValue,priceValue, refetch]);
 
 
     return (
@@ -60,16 +61,19 @@ const AllProducts = () => {
                         <option>Healthy Harvest</option>
                         <option>Green Valley</option>
                     </select>
-                    <select className="select select-bordered w-fit">
+                    <select onChange={e=>setCategoryValue(e.target.value)} className="select select-bordered w-fit">
                         <option disabled selected>Filter Category</option>
                         <option>Fresh Vegetables</option>
                         <option>Fresh Fruit</option>
                     </select>
-                    <select className="select select-bordered w-fit">
-                        <option disabled selected>Filter Price</option>
-                        <option>Under 10</option>
-                        <option>Under 20</option>
-                        <option>Under 50</option>
+                    <select onChange={e=>setPriceValue(e.target.value)} className="select select-bordered w-fit">
+                        <option disabled selected>Filter Price Under</option>
+                        <option>10</option>
+                        <option>20</option>
+                        <option>30</option>
+                        <option>40</option>
+                        <option>50</option>
+                        <option>100</option>
                     </select>
                 </div>
 
@@ -80,10 +84,10 @@ const AllProducts = () => {
                             <path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" />
                         </svg>
                     </label>
-                    <select className="select select-bordered w-fit">
+                    <select onChange={e=>setSortPrice(e.target.value)} className="select select-bordered w-fit">
                         <option disabled selected>Sort by Price</option>
-                        <option>Han Solo</option>
-                        <option>Greedo</option>
+                        <option>Low to High</option>
+                        <option>High to Low</option>
                     </select>
                     <select className="select select-bordered w-fit">
                         <option disabled selected>Sort by Time</option>
