@@ -13,6 +13,8 @@ import starYellow from '../../assets/ratingIcons/star-yellow.png';
 import { SlHandbag } from 'react-icons/sl';
 import { FaRegHeart } from 'react-icons/fa';
 import { LuEye } from 'react-icons/lu';
+import { FaArrowLeft } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa6";
 
 const AllProducts = () => {
     const axiosGlobal = useAxios();
@@ -148,6 +150,23 @@ const AllProducts = () => {
                     )
                 }
 
+            </div>
+
+
+            {/* Pagination div */}
+
+            <div className='flex justify-center items-center gap-3 mt-10'>
+
+                <button className='btn'><FaArrowLeft/> Prev</button>
+
+                <div className="join">
+                    <button className="join-item btn">1</button>
+                    <button className="join-item btn btn-active">2</button>
+                    <button className="join-item btn">3</button>
+                    <button className="join-item btn">4</button>
+                </div>
+
+                <button className='btn'>Next <FaArrowRight/></button>
             </div>
 
         </div>

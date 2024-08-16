@@ -1,38 +1,38 @@
 [
     {
         
-        "name": "Green Apple",
-        "productPic": "https://i.postimg.cc/cC83VbDn/Product-Image.png",
-        "regularPrice": "20.99",
-        "offerPrice": "14.99",
+        "name": "Red Chili",
+        "productPic": "https://i.postimg.cc/7Y8tpsTZ/red-chili.png",
+        "regularPrice": "60.99",
+        "offerPrice": "54.99",
         "ratings": "4",
-        "discount": "50",
-        "categories": "Fresh Fruit",
+        "discount": "5",
+        "categories": "Fresh Vegetables",
         "brandName": "Nature Best",
         "description": "Nature Best's Green Apple is a crisp and refreshing fruit, perfect for a healthy snack or adding a tart flavor to your favorite recipes. These apples are handpicked to ensure freshness and quality. With a regular price of $20.99, the current offer price of $14.99 makes this a great deal, especially with a 50% discount. Rated 4 stars for its taste and quality, this Green Apple is a versatile fruit suitable for any occasion, whether eaten fresh, baked into desserts, or used in salads.",
-        "addedTime": "2024-08-14T09:30:00"
+        "addedTime": "2024-08-14T09:50:00"
     },
     {
         
-        "name": "Fresh China Malta",
-        "productPic": "https://i.postimg.cc/QN5kYFvn/Product-Image-1.png",
-        "regularPrice": "20.00",
+        "name": "Ladies Finger",
+        "productPic": "https://i.postimg.cc/kgwjR7Y2/dheros.png",
+        "regularPrice": "40.00",
         "offerPrice": "",
         "ratings": "4",
         "discount": "",
-        "categories": "Fresh Fruit",
-        "brandName": "Organic Orchard",
+        "categories": "Fresh Vegetables",
+        "brandName": "Nature Best",
         "description": "Fresh China Malta from Organic Orchard is a juicy and sweet citrus fruit known for its vibrant flavor and health benefits. Perfect for juicing or enjoying as a snack, this fruit is a must-have for citrus lovers. Priced at $20.00, this product has a solid 4-star rating, reflecting its high quality and customer satisfaction. Although there is no current discount or offer price, the premium quality and natural freshness make it worth every penny.",
         "addedTime": "2024-08-14T10:15:00"
     },
     {
         
-        "name": "Chinese Cabbage",
-        "productPic": "https://i.postimg.cc/85vWYYXr/Product-Image-9.png",
-        "regularPrice": "12.00",
-        "offerPrice": "",
+        "name": "Red Capsicum",
+        "productPic": "https://i.postimg.cc/jjFZvZbK/red-capsicum.png",
+        "regularPrice": "45.00",
+        "offerPrice": "38",
         "ratings": "4",
-        "discount": "",
+        "discount": "9",
         "categories": "Fresh Vegetables",
         "brandName": "Healthy Harvest",
         "description": "Healthy Harvest's Chinese Cabbage is a leafy vegetable that adds a mild, sweet flavor to any dish. Ideal for stir-fries, soups, or salads, this cabbage is a versatile addition to your kitchen. Priced at $12.00, it offers great value for its freshness and quality. With a 4-star rating, it's a popular choice among those who appreciate healthy, fresh vegetables. This Chinese Cabbage is grown naturally to retain its nutritional value and flavor.",
@@ -40,93 +40,41 @@
     },
     {
         
-        "name": "Green Lettuce",
-        "productPic": "https://i.postimg.cc/hPsmNTsM/Product-Image-5.png",
-        "regularPrice": "12.00",
+        "name": "Red Tomato",
+        "productPic": "https://i.postimg.cc/g2MDkNrR/tomato.png",
+        "regularPrice": "17.00",
         "offerPrice": "",
         "ratings": "4",
         "discount": "",
         "categories": "Fresh Vegetables",
-        "brandName": "Green Valley",
+        "brandName": "Healthy Harvest",
         "description": "Green Lettuce from Green Valley is perfect for fresh salads, sandwiches, or as a garnish. Known for its crisp texture and mild flavor, this lettuce is a staple in healthy diets. Priced at $12.00 and rated 4 stars, it offers both quality and freshness. Green Valley's lettuce is grown using sustainable methods, ensuring that it retains its natural goodness and vibrant green color. Whether for a light meal or a refreshing side dish, this lettuce is an excellent choice.",
         "addedTime": "2024-08-14T11:45:00"
     },
     {
         
-        "name": "Eggplant",
-        "productPic": "https://i.postimg.cc/HLgC58DD/Product-Image-7.png",
+        "name": "Fresh Mango",
+        "productPic": "https://i.postimg.cc/fLsJ4hZv/mango.png",
         "regularPrice": "34.00",
         "offerPrice": "",
         "ratings": "4",
         "discount": "",
-        "categories": "Fresh Vegetables",
+        "categories": "Fresh Fruit",
         "brandName": "Nature Best",
         "description": "Nature Best's Eggplant is a versatile vegetable with a rich, creamy texture and mild flavor. Perfect for grilling, roasting, or adding to stews, this eggplant is a staple in many cuisines. Priced at $34.00, it may seem premium, but its quality and taste justify the cost. With a 4-star rating, this eggplant is highly appreciated for its freshness and ability to absorb flavors in cooking. It's a great addition to any healthy diet.",
         "addedTime": "2024-08-14T12:30:00"
     },
     {
         
-        "name": "Big Potatoes",
-        "productPic": "https://i.postimg.cc/7PJ8sr1Z/Product-Image-3.png",
-        "regularPrice": "20.00",
+        "name": "Green Cucumber",
+        "productPic": "https://i.postimg.cc/j25qKx1y/cucumber.png",
+        "regularPrice": "24.00",
         "offerPrice": "14.00",
         "ratings": "4",
-        "discount": "20",
-        "categories": "Fresh Vegetables",
-        "brandName": "Organic Orchard",
-        "description": "Organic Orchard's Big Potatoes are perfect for a variety of dishes, from mashed potatoes to fries. These potatoes are known for their starchy texture and earthy flavor, making them a kitchen staple. With a regular price of $20.00 and an offer price of $14.00, along with a 20% discount, these potatoes offer great value. Rated 4 stars, they are a popular choice for their quality and taste. Grown organically, these potatoes are free from harmful chemicals and pesticides.",
-        "addedTime": "2024-08-14T13:15:00"
-    },
-    {
-        
-        "name": "Corn",
-        "productPic": "https://i.postimg.cc/nhJ18B6P/Image.png",
-        "regularPrice": "20.00",
-        "offerPrice": "",
-        "ratings": "4",
-        "discount": "",
-        "categories": "Fresh Vegetables",
-        "brandName": "Healthy Harvest",
-        "description": "Healthy Harvest's Corn is a sweet and tender vegetable that can be enjoyed in a variety of ways, whether grilled, boiled, or added to salads. Known for its vibrant yellow kernels and juicy texture, this corn is a favorite among many. Priced at $20.00 and rated 4 stars, it offers both quality and versatility. This corn is grown using sustainable farming practices, ensuring that it retains its natural sweetness and nutritional value.",
-        "addedTime": "2024-08-14T14:00:00"
-    },
-    {
-        
-        "name": "Fresh Cauliflower",
-        "productPic": "https://i.postimg.cc/DzmJRzyN/Product-Image-4.png",
-        "regularPrice": "12.00",
-        "offerPrice": "",
-        "ratings": "4",
-        "discount": "",
-        "categories": "Fresh Vegetables",
-        "brandName": "Green Valley",
-        "description": "Green Valley's Fresh Cauliflower is a nutritious vegetable that can be used in a variety of dishes, from roasting to steaming. Known for its mild flavor and firm texture, this cauliflower is a healthy addition to any meal. Priced at $12.00 and rated 4 stars, it is a great choice for those looking for quality and freshness. Grown with care, this cauliflower is free from harmful chemicals and pesticides, making it a safe and healthy choice.",
-        "addedTime": "2024-08-14T14:45:00"
-    },
-    {
-        
-        "name": "Green Capsicum",
-        "productPic": "https://i.postimg.cc/nrfXsYY8/Product-Image-6.png",
-        "regularPrice": "20.99",
-        "offerPrice": "9.00",
-        "ratings": "4",
-        "discount": "50",
-        "categories": "Fresh Vegetables",
+        "discount": "18",
+        "categories": "Fresh Fruit",
         "brandName": "Nature Best",
-        "description": "Nature Best's Green Capsicum is a versatile vegetable that adds a crunchy texture and slightly sweet flavor to any dish. Perfect for salads, stir-fries, or grilling, this capsicum is a must-have in every kitchen. With a regular price of $20.99 and an offer price of $9.00, along with a 50% discount, it's an excellent value. Rated 4 stars, this capsicum is known for its freshness and quality. It's a great way to add color and flavor to your meals.",
-        "addedTime": "2024-08-14T15:30:00"
-    },
-    {
-        
-        "name": "Green Chilli",
-        "productPic": "https://i.postimg.cc/yYBJsj8c/Product-Image-8.png",
-        "regularPrice": "34.00",
-        "offerPrice": "",
-        "ratings": "4",
-        "discount": "",
-        "categories": "Fresh Vegetables",
-        "brandName": "Organic Orchard",
-        "description": "Organic Orchard's Green Chilli is a fiery addition to any dish, adding a spicy kick that enhances flavor. Perfect for curries, sauces, or pickling, these chillies are a favorite for those who love heat in their food. Priced at $34.00 and rated 4 stars, these chillies are known for their intense flavor and quality. Grown organically, they are free from harmful chemicals, making them a safe and healthy choice for your cooking needs.",
-        "addedTime": "2024-08-14T16:15:00"
+        "description": "Nature Best's Eggplant is a versatile vegetable with a rich, creamy texture and mild flavor. Perfect for grilling, roasting, or adding to stews, this eggplant is a staple in many cuisines. Priced at $34.00, it may seem premium, but its quality and taste justify the cost. With a 4-star rating, this eggplant is highly appreciated for its freshness and ability to absorb flavors in cooking. It's a great addition to any healthy diet.",
+        "addedTime": "2024-08-14T12:30:00"
     }
 ]

@@ -11,26 +11,24 @@ import starYellow from '../../assets/ratingIcons/star-yellow.png';
 import { LuEye } from 'react-icons/lu';
 import ItemLoader from '../../Shared/ItemLoader/ItemLoader';
 import { Link } from 'react-router-dom';
+import useAxios from '../../Hooks/useAxios/useAxios';
+import { useQuery } from '@tanstack/react-query';
 
 
 
 const PopularProducts = () => {
-    const [allProducts, setAllProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const axiosGlobal = useAxios();
     const [isHoverId, setIsHoverId] = useState(null);
+    const {data:allProducts,isLoading} = useQuery({
+        queryKey:["Home page 10 products"],
+        queryFn: async ()=>{
+            const result = await axiosGlobal("/all-products");
+            return result.data;
+        }
+    })
+    
 
-    useEffect(() => {
-        setLoading(true);
-        fetch("/popularProduct.json")
-            .then(res => res.json())
-            .then(result => {
-                setAllProducts(result);
-                setLoading(false);
-            })
-    }, [])
-
-
-    if (loading) return <ItemLoader />
+    if (isLoading) return <ItemLoader />
 
 
     return (
@@ -44,12 +42,12 @@ const PopularProducts = () => {
             </div>
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5'>
                 {
-                    allProducts?.slice(0,10)?.map(({ productPic, productId, name, offerPrice, regularPrice, ratings, discount, brandName }) =>
+                    allProducts?.slice(0,10)?.map(({ productPic, _id, name, offerPrice, regularPrice, ratings, discount, brandName }) =>
 
                         <div
-                            onMouseOver={() => setIsHoverId(productId)}
+                            onMouseOver={() => setIsHoverId(_id)}
                             onMouseOut={() => setIsHoverId(null)}
-                            key={productId}
+                            key={_id}
                             className='border relative  py-2  cursor-pointer hover:border-[#2C742F] hover:shadow-lg hover:text-[#2C742F]'
                         >
                             <img src={productPic} alt="" />
@@ -81,7 +79,7 @@ const PopularProducts = () => {
 
                             <p className={`${discount ? "px-2 py-1 bg-[#ea4b48] w-fit rounded-md text-white absolute top-4 left-4" : "hidden"}`}>Sale {discount}%</p>
                             <div
-                                hidden={isHoverId !== productId}
+                                hidden={isHoverId !== _id}
                                 className='absolute top-3 right-3 space-y-2'>
                                 <div className='p-3 rounded-full border border-[#f2f2f2] bg-white hover:bg-[#00b207] hover:text-white transition'><FaRegHeart /></div>
                                 <div className='p-3 rounded-full border border-[#f2f2f2] bg-white hover:bg-[#00b207] hover:text-white transition'><LuEye /></div>
