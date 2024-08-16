@@ -10,6 +10,7 @@ import starYellow from '../../assets/ratingIcons/star-yellow.png';
 
 import { LuEye } from 'react-icons/lu';
 import ItemLoader from '../../Shared/ItemLoader/ItemLoader';
+import { Link } from 'react-router-dom';
 
 
 
@@ -36,14 +37,14 @@ const PopularProducts = () => {
         <div className='mt-16 all-container mx-auto'>
             <div className='flex justify-between items-center font-[600] mb-8'>
                 <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold'>Popular Products</h2>
-                <button className='flex items-center gap-3 text-[#00b207] text-sm md:text-base hover:underline'>View all <FaArrowRight /></button>
+                <Link to={"all-products"} className='flex items-center gap-3 text-[#00b207] text-sm md:text-base hover:underline'>View all <FaArrowRight /></Link>
 
 
 
             </div>
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5'>
                 {
-                    allProducts?.map(({ productPic, productId, name, offerPrice, regularPrice, ratings, discount }) =>
+                    allProducts?.slice(0,10)?.map(({ productPic, productId, name, offerPrice, regularPrice, ratings, discount, brandName }) =>
 
                         <div
                             onMouseOver={() => setIsHoverId(productId)}
@@ -55,11 +56,13 @@ const PopularProducts = () => {
 
                             <div className='flex justify-between items-center px-4'>
                                 <div>
-
-                                    <h2 className=' font-semibold text-[#4d4d4d]'>{name}</h2>
+                                    <div>
+                                        <h2 className=' font-semibold text-[#00B207] hover:text-[#4d4d4d] hover:underline'>{name}</h2>
+                                        <p className='text-xs text-[#4d4d4d]'>{brandName}</p>
+                                    </div>
                                     <div className='flex gap-2'>
-                                        <h2 className={`${offerPrice ? "font-bold text-xl" : "hidden"}`}>$ {offerPrice} </h2>
-                                        <h2 className={`${offerPrice ? "line-through text-[#999999] text-base" : "font-bold text-xl"} `}>$ {regularPrice} </h2>
+                                        <h2 className={`${offerPrice ? "font-semibold text-xl" : "hidden"}`}>$ {offerPrice} </h2>
+                                        <h2 className={`${offerPrice ? "line-through text-[#999999] text-base" : "font-semibold text-xl"} `}>$ {regularPrice} </h2>
 
                                     </div>
                                     <Rating
