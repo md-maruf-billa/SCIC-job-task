@@ -1,8 +1,28 @@
-# React + Vite
+# eVoucher Frontend Repo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### How to run this code?
 
-Currently, two official plugins are available:
+#### Clone this repo
+```
+https://github.com/md-maruf-billa/SCIC-job-task.git
+```
+#### Now change dir and type
+```
+npm install
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Now add a .env file and add this env variable
+```
+VITE_BASE_ULR= your server url
+
+```
+#### Now type this command and hit Enter
+```
+npm run dev
+```
+
+
+### If you want to Server repo hare it is-
+```
+https://github.com/md-maruf-billa/SCIC-Job-Task-Server.git
+```

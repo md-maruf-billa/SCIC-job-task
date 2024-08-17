@@ -2,7 +2,7 @@ import React from 'react';
 import { CiLocationOn } from "react-icons/ci";
 import { SlHandbag } from "react-icons/sl";
 import { IoMdHeartEmpty } from "react-icons/io";
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import { LuPhoneCall } from "react-icons/lu";
 
 
@@ -42,13 +42,13 @@ const Nav = () => {
                         <span>
                             |
                         </span>
-                        <button>
+                        <Link to="/login">
                             Sign In
-                        </button>
+                        </Link>
                         <span>/</span>
-                        <button>
+                        <Link to="/register">
                             Sign Up
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@ const Nav = () => {
                     <div>
                         <img className='w-[120px]' src="./logo.png" alt="" />
                     </div>
-                    <div className="navbar-start lg:hidden">
+                    <div className="navbar-start lg:hidden z-50">
                         <div className="dropdown">
                             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                                 <svg

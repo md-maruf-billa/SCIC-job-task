@@ -36,7 +36,7 @@ const Banner = () => {
                             <img src="./bannerimage1.png" alt="" />
                         </div>
                         <div className='space-y-3 text-center md:text-left'>
-                            <h5 className='uppercase text-[#00B207] text-sm'>Welcome to shopery</h5>
+                            <h5 className='uppercase text-[#00B207] text-sm'>Welcome to eVoucher</h5>
                             <h1 className='text-4xl lg:text-7xl font-semibold lg:leading-[86px]'>Fresh & Healthy <br />
                                 Organic Food</h1>
                             <h2 className='text-xl lg:text-3xl'>Sale up to <span className='text-[#FF8A00] font-semibold'>30% OFF</span></h2>
@@ -53,7 +53,7 @@ const Banner = () => {
                             <img src="./person.png" alt="" />
                         </div>
                         <div className='space-y-3 text-center md:text-left'>
-                            <h5 className='uppercase text-[#00B207] text-sm'>Welcome to shopery</h5>
+                            <h5 className='uppercase text-[#00B207] text-sm'>Welcome to eVoucher</h5>
                             <h1 className='text-4xl lg:text-7xl font-semibold lg:leading-[86px]'>Fresh & Healthy <br />
                                 Organic Food</h1>
                             <h2 className='text-xl lg:text-3xl'>Sale up to <span className='text-[#FF8A00] font-semibold'>30% OFF</span></h2>
@@ -70,7 +70,7 @@ const Banner = () => {
                             <img src="./person1.png" alt="" />
                         </div>
                         <div className='space-y-3 text-center md:text-left'>
-                            <h5 className='uppercase text-[#00B207] text-sm'>Welcome to shopery</h5>
+                            <h5 className='uppercase text-[#00B207] text-sm'>Welcome to eVoucher</h5>
                             <h1 className='text-4xl lg:text-7xl font-semibold lg:leading-[86px]'>Fresh & Healthy <br />
                                 Organic Food</h1>
                             <h2 className='text-xl lg:text-3xl'>Sale up to <span className='text-[#FF8A00] font-semibold'>30% OFF</span></h2>
@@ -87,7 +87,7 @@ const Banner = () => {
                             <img src="./person2.png" alt="" />
                         </div>
                         <div className='space-y-3 text-center md:text-left'>
-                            <h5 className='uppercase text-[#00B207] text-sm'>Welcome to shopery</h5>
+                            <h5 className='uppercase text-[#00B207] text-sm'>Welcome to eVoucher</h5>
                             <h1 className='text-4xl lg:text-7xl font-semibold lg:leading-[86px]'>Fresh & Healthy <br />
                                 Organic Food</h1>
                             <h2 className='text-xl lg:text-3xl'>Sale up to <span className='text-[#FF8A00] font-semibold'>30% OFF</span></h2>
@@ -104,7 +104,7 @@ const Banner = () => {
                             <img src="./bannerimage1.png" alt="" />
                         </div>
                         <div className='space-y-3 text-center md:text-left'>
-                            <h5 className='uppercase text-[#00B207] text-sm'>Welcome to shopery</h5>
+                            <h5 className='uppercase text-[#00B207] text-sm'>Welcome to eVoucher</h5>
                             <h1 className='text-4xl lg:text-7xl font-semibold lg:leading-[86px]'>Fresh & Healthy <br />
                                 Organic Food</h1>
                             <h2 className='text-xl lg:text-3xl'>Sale up to <span className='text-[#FF8A00] font-semibold'>30% OFF</span></h2>

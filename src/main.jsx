@@ -7,12 +7,17 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query';
+import AuthContext from './Pages/Auth/Firebase/AuthContext';
 const queryClient = new QueryClient();
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={Router}></RouterProvider>
+      <AuthContext>
+        <RouterProvider router={Router}></RouterProvider>
+      </AuthContext>
     </QueryClientProvider>
+
   </StrictMode>,
 )

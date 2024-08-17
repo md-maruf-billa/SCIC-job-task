@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const useAxios = () => {
     const axiosGlobal = axios.create({
-        baseURL:"http://localhost:7000",
+        baseURL:"https://evoucher-server.vercel.app",
     })
     return axiosGlobal;
 };

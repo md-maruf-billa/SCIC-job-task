@@ -17,7 +17,7 @@ const Footer = () => {
                 <div className="lg:flex gap-9">
                     <div className="w-full -mx-6 lg:w-2/5">
                         <div className="px-6 space-y-4">
-                            <h2 className="text-3xl font-semibold flex items-center gap-2 text-white"><img src="/fav.png" alt="" /> Echo Shop</h2>
+                            <h2 className="text-3xl font-semibold flex items-center gap-2 text-white"><img src="/fav.png" alt="" /> eVoucher</h2>
                             <p className='footer-text'>Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis dui, eget bibendum magna congue nec.</p>
 
                             <p className='footer-text'><span className='text-white'>(+880) 01XXXX</span> or <span className='text-white'>test@gamil.com</span></p>
