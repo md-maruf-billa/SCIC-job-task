@@ -50,7 +50,7 @@ const Banner = () => {
                 <SwiperSlide className='px-4 lg:px-0 py-4'>
                     <div className='flex flex-col md:flex-row items-center justify-between'>
                         <div className='md:w-1/2'>
-                            <img src="./bannerimage1.png" alt="" />
+                            <img src="./person.png" alt="" />
                         </div>
                         <div className='space-y-3 text-center md:text-left'>
                             <h5 className='uppercase text-[#00B207] text-sm'>Welcome to shopery</h5>
@@ -67,7 +67,7 @@ const Banner = () => {
                 <SwiperSlide className='px-4 lg:px-0 py-4'>
                     <div className='flex flex-col md:flex-row items-center justify-between'>
                         <div className='md:w-1/2'>
-                            <img src="./bannerimage1.png" alt="" />
+                            <img src="./person1.png" alt="" />
                         </div>
                         <div className='space-y-3 text-center md:text-left'>
                             <h5 className='uppercase text-[#00B207] text-sm'>Welcome to shopery</h5>
@@ -84,7 +84,7 @@ const Banner = () => {
                 <SwiperSlide className='px-4 lg:px-0 py-4'>
                     <div className='flex flex-col md:flex-row items-center justify-between'>
                         <div className='md:w-1/2'>
-                            <img src="./bannerimage1.png" alt="" />
+                            <img src="./person2.png" alt="" />
                         </div>
                         <div className='space-y-3 text-center md:text-left'>
                             <h5 className='uppercase text-[#00B207] text-sm'>Welcome to shopery</h5>
