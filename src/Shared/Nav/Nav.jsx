@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { CiLocationOn } from "react-icons/ci";
-import { SlHandbag } from "react-icons/sl";
-import { IoMdHeartEmpty } from "react-icons/io";
-import { Link, NavLink } from "react-router-dom"
-import { LuPhoneCall } from "react-icons/lu";
-
+import { Link, NavLink, useNavigate } from "react-router-dom"
+import { LuUserCircle2 } from "react-icons/lu";
+import { firebaseContext } from '../../Pages/Auth/Firebase/AuthContext';
+import Swal from 'sweetalert2';
 
 const Nav = () => {
-
+    const { currentUser, logOut } = useContext(firebaseContext);
+    console.log(currentUser)
+    const navigate = useNavigate();
     const navLink = <>
         <li><NavLink to={"/"}>Home</NavLink></li>
         <li><NavLink to={"/shop"}>Shop</NavLink></li>
@@ -17,6 +18,23 @@ const Nav = () => {
         <li><NavLink to={"/contact-us"}>Contact Us</NavLink></li>
 
     </>
+
+
+    //  signout user
+    const signOutUser = () => {
+        logOut()
+            .then(() => {
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Log Out Successful",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                navigate("/")
+            })
+    }
+
 
 
     return (
@@ -94,15 +112,38 @@ const Nav = () => {
                         </ul>
                     </div>
                     <div className="navbar-end">
-                        <div className='text-white flex items-center gap-2'>
-                            <LuPhoneCall className='text-2xl' />
-                            <p>(+880) 17XXX</p>
+
+
+                        <div className="dropdown dropdown-end">
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-16 rounded-full">
+                                    {
+                                        currentUser?.photoURL ?
+                                            <img
+                                                alt="profile image"
+                                                src={currentUser?.photoURL} /> :
+                                            <LuUserCircle2 className='text-4xl' />
+                                    }
+                                </div>
+                            </div>
+                            <ul
+                                tabIndex={0}
+                                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
+                                <li>
+                                    <a className="justify-between">
+                                        Profile
+                                        <span className="badge">New</span>
+                                    </a>
+                                </li>
+                                <li><a>Settings</a></li>
+                                <li onClick={signOutUser}><a>Logout</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-        </div>
+        </div >
     );
 };
 
